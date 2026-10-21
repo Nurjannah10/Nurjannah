@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Informasi Kampus - Universitas Sulawesi Barat</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(13, 110, 253, 0.85), rgba(10, 88, 202, 0.9)), url('https://lib.unsulbar.ac.id/wp-content/uploads/2024/08/Unsulbar-Logo-1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
+            padding: 65px 0;
+        }
+       
+        .card-prodi {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-prodi:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        }
+        .stat-icon {
+            font-size: 2.5rem;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#beranda">
+                <i class="bi bi-mortarboard-fill text-primary me-2"></i>Info Kampus Unsulbar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#prodi">Program Studi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#fasilitas">Fasilitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#informasi">Informasi PMB</a></li>
+                </ul>
+                
+                <div class="d-flex gap-2 mt-2 mt-lg-0">
+                    <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                        <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                    </button>
+                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDaftar">
+                        <i class="bi bi-pencil-square me-1"></i> Daftar PMB
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="beranda" class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Selamat Datang di Portal Informasi Kampus</h1>
+            <p class="lead mb-4 mx-auto" style="max-width: 700px;">
+                Wujudkan masa depan cemerlang bersama program pendidikan berkualitas, fasilitas modern, dan lingkungan akademik yang inovatif.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#prodi" class="btn btn-light btn-lg text-primary fw-bold shadow-sm">Jelajahi Prodi</a>
+                <button class="btn btn-outline-light btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#modalDaftar">Daftar Sekarang</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 bg-white border-bottom shadow-sm">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-6 col-md-3">
+                    <i class="bi bi-people stat-icon"></i>
+                    <h3 class="fw-bold mt-2 mb-0">50</h3>
+                    <p class="text-muted small">Mahasiswa Aktif</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <i class="bi bi-journal-bookmark stat-icon"></i>
+                    <h3 class="fw-bold mt-2 mb-0">12+</h3>
+                    <p class="text-muted small">Program Studi</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <i class="bi bi-award stat-icon"></i>
+                    <h3 class="fw-bold mt-2 mb-0">A</h3>
+                    <p class="text-muted small">Akreditasi Institusi</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <i class="bi bi-building-check stat-icon"></i>
+                    <h3 class="fw-bold mt-2 mb-0">80%</h3>
+                    <p class="text-muted small">Lulusan Bekerja</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prodi" class="py-5">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold text-dark">Program Studi Pilihan</h2>
+                <p class="text-muted">Gunakan pencarian di bawah untuk menyaring program studi secara interaktif.</p>
+            </div>
+
+            <!-- Input Pencarian -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+                        <input type="text" id="cariProdi" class="form-control" placeholder="Ketik nama program studi (contoh: PTI, Informatika)...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4" id="daftarProdi">
+                <!-- Prodi 1 -->
+                <div class="col-md-4 item-prodi">
+                    <div class="card h-100 border-0 shadow-sm card-prodi">
+                        <div class="card-body p-4">
+                            <div class="badge bg-primary mb-3">Fakultas Pendidikan</div>
+                            <h5 class="card-title fw-bold">Pendidikan Teknologi Informasi</h5>
+                            <p class="card-text text-muted">
+                                Mencetak tenaga pendidik dan profesional di bidang pemrograman, pengajaran IT, dan pengembangan perangkat lunak.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 item-prodi">
+                    <div class="card h-100 border-0 shadow-sm card-prodi">
+                        <div class="card-body p-4">
+                            <div class="badge bg-primary mb-3">Fakultas Teknik</div>
+                            <h5 class="card-title fw-bold">Informatika</h5>
+                            <p class="card-text text-muted">
+                                Berfokus pada pengembangan kecerdasan buatan, rekayasa perangkat lunak, dan keamanan jaringan komputer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 item-prodi">
+                    <div class="card h-100 border-0 shadow-sm card-prodi">
+                        <div class="card-body p-4">
+                            <div class="badge bg-success mb-3">Fakultas Ekonomi</div>
+                            <h5 class="card-title fw-bold">Manajemen Bisnis</h5>
+                            <p class="card-text text-muted">
+                                Mengembangkan wirausahawan muda, manajer profesional, dan analis strategi bisnis digital.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fasilitas" class="py-5 bg-light border-top border-bottom">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-dark">Fasilitas Kampus</h2>
+                <p class="text-muted">Sarana dan prasarana pendukung kegiatan belajar mengajar.</p>
+            </div>
+
+            <div class="row g-4 text-center justify-content-center">
+                <div class="col-md-3">
+                    <div class="p-4 bg-white rounded shadow-sm h-100">
+                        <i class="bi bi-laptop fs-1 text-primary mb-3"></i>
+                        <h5 class="fw-bold">Lab Komputer</h5>
+                        <p class="text-muted small">Laboratorium spesifikasi tinggi dengan koneksi internet cepat.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-4 bg-white rounded shadow-sm h-100">
+                        <i class="bi bi-book fs-1 text-success mb-3"></i>
+                        <h5 class="fw-bold">Perpustakaan Digital</h5>
+                        <p class="text-muted small">Akses ribuan jurnal internasional, buku digital, dan ruang baca nyaman.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-4 bg-white rounded shadow-sm h-100">
+                        <i class="bi bi-wifi fs-1 text-warning mb-3"></i>
+                        <h5 class="fw-bold">Area Wi-Fi Gratis</h5>
+                        <p class="text-muted small">Jangkauan koneksi internet nirkabel di seluruh area gedung kampus.</p>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title fw-bold"><i class="bi bi-person-circle me-2"></i>Login Pengunjung</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div id="loginAlert" class="alert d-none" role="alert"></div>
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email / Username</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="nama@email.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Masukkan password">
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100 fw-bold">Masuk</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDaftar" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title fw-bold"><i class="bi bi-pencil-square me-2"></i>Form Pendaftaran PMB</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div id="daftarAlert" class="alert d-none" role="alert"></div>
+                    <form id="daftarForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="namaLengkap" placeholder="Masukkan nama sesuai ijazah">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Alamat Email</label>
+                            <input type="email" class="form-control" id="emailPendaftaran" placeholder="contoh@email.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Pilihan Program Studi</label>
+                            <select class="form-select" id="pilihanProdi">
+                                <option value="">-- Pilih Program Studi --</option>
+                                <option value="Pendidikan Teknologi Informasi">Pendidikan Teknologi Informasi</option>
+                                <option value="Informatika">Informatika</option>
+                                <option value="Manajemen Bisnis">Manajemen Bisnis</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Kirim Pendaftaran</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-1 fw-bold">Universitas Sulawesi Barat - Portal Informasi Kampus</p>
+            <p class="mb-0 small text-white-50">&copy; 2026 Portal Informasi Pendidikan. Dibuat dengan Bootstrap 5 & JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
